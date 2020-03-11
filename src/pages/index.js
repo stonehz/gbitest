@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ReactPlayer from 'react-player'
 import Layout from '../components/Layout'
 import AstronautImage from '../components/AstronautImage'
 import SEO from '../components/SEO'
@@ -10,6 +10,18 @@ import {
   StyledLink,
   StyledWrapper,
 } from '../components/SharedStyledComponents'
+
+
+export const video = {
+  zoom: '1',
+  url:"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+  playing: true,
+  loop: true,
+  controls: false,
+  muted: true,
+  volume: 0,
+  light: false,
+}
 
 const IndexPage = () => (
   <Layout>
@@ -32,6 +44,7 @@ const IndexPage = () => (
             <p>
               To the right, the same image rendered by <code>gatsby-image</code>
             </p>
+            <ReactPlayer {...video} />
             <StyledImageWrapper>
               <AstronautImage />
             </StyledImageWrapper>
